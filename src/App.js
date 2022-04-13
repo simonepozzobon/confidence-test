@@ -68,7 +68,7 @@ function LocationCard(props) {
     let subscriptionBadge;
     if (location.subscriptionActive) {
         subscriptionBadge = (
-            <div className="flex mt-1 lg:mt-0 px-4 py-4 shadow-inner rounded-bl-md bg-green-50">
+            <div className="flex px-4 py-4 shadow-inner rounded-bl-md bg-green-50 items-center justify-center">
                 <BellIcon className="w-5 text-green-600" />
             </div>
         );
@@ -76,23 +76,23 @@ function LocationCard(props) {
 
     return (
         <li className="bg-white shadow-md overflow-hidden rounded-md border border-light-blue flex gap-4 lg:gap-6">
-            <div className="flex flex-col justify-center items-center bg-white px-4 py-4 shadow-inner w-16">
-                <div className="lg:hidden">{subscriptionBadge}</div>
-                <div class="flex gap-2">
-                    <UserIcon className="w-4 text-gray-400" />
-                    <span className="text-primary">
+            <div className="flex flex-col items-center bg-white shadow-inner w-16 overflow-hidden">
+                <div className="lg:hidden w-full">{subscriptionBadge}</div>
+                <div class="flex-grow flex items-center gap-2 px-4 py-2 bg-orange-100 shadow-inner">
+                    <UserIcon className="w-4 text-gray-600" />
+                    <span className="text-gray-600">
                         {location.numberofMyTasks}
                     </span>
                 </div>
-                <div className="flex gap-2">
-                    <UsersIcon className="w-4 text-gray-400" />
-                    <span className="text-primary">
+                <div class="flex-grow flex items-center gap-2 px-4 py-2 bg-blue-100 shadow-inner">
+                    <UsersIcon className="w-4 text-gray-600" />
+                    <span className="text-gray-600">
                         {location.numberofTasks}
                     </span>
                 </div>
-                <div className="flex gap-2">
-                    <DesktopComputerIcon className="w-4 text-gray-400" />
-                    <span className="text-primary">
+                <div class="flex-grow flex items-center gap-2 px-4 py-2 bg-purple-100 shadow-inner">
+                    <DesktopComputerIcon className="w-4 text-gray-600" />
+                    <span className="text-gray-600">
                         {location.numberofDevices}
                     </span>
                 </div>
