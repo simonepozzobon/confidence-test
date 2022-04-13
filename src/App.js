@@ -68,7 +68,7 @@ function LocationCard(props) {
     let subscriptionBadge;
     if (location.subscriptionActive) {
         subscriptionBadge = (
-            <div className="flex px-4 py-4 shadow-inner rounded-bl-md bg-green-50 items-center justify-center">
+            <div className="flex px-4 py-4 shadow-inner rounded-bl-md bg-green-100 items-center justify-center">
                 <BellIcon className="w-5 text-green-600" />
             </div>
         );
@@ -90,7 +90,7 @@ function LocationCard(props) {
                         {location.numberofTasks}
                     </span>
                 </div>
-                <div class="flex-grow flex items-center gap-2 px-4 py-2 bg-purple-100 shadow-inner">
+                <div className="flex-grow flex items-center gap-2 px-4 py-2 bg-purple-100 shadow-inner">
                     <DesktopComputerIcon className="w-4 text-gray-600" />
                     <span className="text-gray-600">
                         {location.numberofDevices}
@@ -99,7 +99,10 @@ function LocationCard(props) {
             </div>
             <div className="flex-grow py-4">
                 <div className="block lg:hidden">{badge}</div>
-                <div className="text-base">
+                <div className="text-gray-500 font-light text-xs mt-1 lg:mt-0">
+                    {location.locationUserRole}
+                </div>
+                <div className="text-base mt-1">
                     <span className="text-gray-500 font-light">
                         {location.locationType}&nbsp;
                     </span>
@@ -167,7 +170,7 @@ function App() {
                 </h1>
             </header>
             {/* <input type="text" value={query} onChange={handleChange} /> */}
-            <div className="max-w-3xl mx-auto p-4 sm:p-6 md:p-8 lg:p-0 pb-24">
+            <div className="max-w-3xl mx-auto py-4 px-4 sm:py-6 sm:px-6 md:py-8 md:px-8 lg:px-0 lg:py-24">
                 <ul className="space-y-4">
                     {locations.map((location) => (
                         <LocationCard
