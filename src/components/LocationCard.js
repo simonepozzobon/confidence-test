@@ -35,7 +35,7 @@ function LocationCard(props) {
     }
 
     return (
-        <li className="bg-white shadow-md overflow-hidden rounded-md border border-light-blue flex">
+        <div className="bg-white shadow-md overflow-hidden rounded-md border border-light-blue flex">
             <div className="flex flex-col items-center bg-white shadow-inner w-16 overflow-hidden">
                 <div className="lg:hidden w-full">{subscriptionBadge}</div>
                 <div className="flex-grow flex items-center gap-2 px-4 py-2 bg-orange-100 shadow-inner">
@@ -97,7 +97,7 @@ function LocationCard(props) {
                 </div>
             </div>
             <div className="hidden lg:block">{subscriptionBadge}</div>
-        </li>
+        </div>
     );
 }
 

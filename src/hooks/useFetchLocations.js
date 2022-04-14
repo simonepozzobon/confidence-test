@@ -5,15 +5,16 @@ export default function useFetchLocations(start, limit) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [locations, setLocations] = useState([]);
-    const [numberOfLocations, setNumberOfLocations] = useState(0);
+    const [numberOfLocations, setNumberOfLocations] = useState(100);
     const [hasMore, setHasMore] = useState(true);
 
     useEffect(() => {
-        console.log(locations);
-    }, [locations]);
+        if (numberOfLocations === locations.length) {
+            setHasMore(false);
+        }
+    }, [numberOfLocations, locations]);
 
     useEffect(() => {
-        console.log("log start", start);
         setLoading(true);
         setError(false);
         let cancel;
@@ -38,7 +39,6 @@ export default function useFetchLocations(start, limit) {
                     ];
                 });
                 setLoading(false);
-                console.log(res.data);
             })
             .catch((err) => {
                 if (axios.isCancel(err)) return;
