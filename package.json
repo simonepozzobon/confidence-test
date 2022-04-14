@@ -2,7 +2,7 @@
     "name": "confidence-test",
     "version": "0.1.0",
     "private": true,
-    "proxy": "https://dev-api.confidence.org",
+    "proxy": "https://dev-api.confidence.org/",
     "dependencies": {
         "@heroicons/react": "^1.0.6",
         "@testing-library/jest-dom": "^5.16.4",
