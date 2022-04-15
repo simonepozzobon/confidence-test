@@ -25,11 +25,10 @@ test("LocationCard location is Active", () => {
         ...baseLocation,
         active: true,
     };
-
     render(<LocationCard location={location} />);
     const badgeEls = screen.getAllByText("Active");
     badgeEls.map((badgeEl) => {
-        expect(badgeEl).toBeInTheDocument();
+        return expect(badgeEl).toBeInTheDocument();
     });
 });
 
@@ -41,7 +40,7 @@ test("LocationCard location is Inactive", () => {
     render(<LocationCard location={location} />);
     const badgeEls = screen.getAllByText("Inactive");
     badgeEls.map((badgeEl) => {
-        expect(badgeEl).toBeInTheDocument();
+        return expect(badgeEl).toBeInTheDocument();
     });
 });
 
@@ -54,6 +53,6 @@ test("LocationCard subscribed to location", () => {
     render(<LocationCard location={location} />);
     const subscriptionBadges = screen.getAllByTestId("subscribed-badge");
     subscriptionBadges.map((subscriptionBadge) => {
-        expect(subscriptionBadge).toBeInTheDocument();
+        return expect(subscriptionBadge).toBeInTheDocument();
     });
 });

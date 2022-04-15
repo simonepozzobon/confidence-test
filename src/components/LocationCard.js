@@ -40,7 +40,7 @@ function LocationCard(props) {
     return (
         <div className="bg-white shadow-md overflow-hidden rounded-md border border-light-blue flex">
             <div className="flex flex-col items-center bg-white shadow-inner w-16 overflow-hidden">
-                <div className="lg:hidden w-full">{subscriptionBadge}</div>
+                <div className="md:hidden w-full">{subscriptionBadge}</div>
                 <div className="flex-grow flex items-center gap-2 px-4 py-2 bg-orange-100 shadow-inner">
                     <UserIcon className="w-4 text-gray-600" />
                     <span className="text-gray-600">
@@ -65,8 +65,8 @@ function LocationCard(props) {
                 </div>
             </div>
             <div className="flex-grow py-4 border-l border-gray-100 px-4">
-                <div className="block lg:hidden">{badge}</div>
-                <div className="text-gray-500 font-light text-xs mt-1 lg:mt-0">
+                <div className="block md:hidden">{badge}</div>
+                <div className="text-gray-500 font-light text-xs mt-1 md:mt-0">
                     {location.locationUserRole}
                 </div>
                 <div className="text-base mt-1">
@@ -81,25 +81,22 @@ function LocationCard(props) {
                     <h2 className="font-extrabold text-2xl text-gray-900 leading-8">
                         {location.locationName}
                     </h2>
-                    <div className="hidden lg:block">{badge}</div>
+                    <div className="hidden md:block">{badge}</div>
                 </div>
                 <div className="text-gray-500 mt-1">
-                    <LocationMarkerIcon className="w-4 text-gray-400 hidden lg:inline-block mr-1" />
-                    <span className="block lg:inline-block">
+                    <LocationMarkerIcon className="w-4 text-gray-400 hidden md:inline-block mr-1" />
+                    <span className="block md:inline-block">
                         {location.address.addressLine1},&nbsp;
                     </span>
-                    <span className="block lg:inline-block">
-                        {location.address.addressLine2},&nbsp;
-                    </span>
-                    <span className="block lg:inline">
+                    <span className="block md:inline">
                         {location.address.city},&nbsp;
                     </span>
-                    <span className="block lg:inline">
+                    <span className="block md:inline">
                         {location.address.zip}, {location.address.state}
                     </span>
                 </div>
             </div>
-            <div className="hidden lg:block">{subscriptionBadge}</div>
+            <div className="hidden md:block">{subscriptionBadge}</div>
         </div>
     );
 }

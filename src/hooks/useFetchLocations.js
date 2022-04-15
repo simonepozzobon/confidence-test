@@ -47,5 +47,5 @@ export default function useFetchLocations(start, limit) {
         return () => cancel();
     }, [start, limit]);
 
-    return { loading, error, locations, hasMore };
+    return { error, hasMore, loading, locations };
 }

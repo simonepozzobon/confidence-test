@@ -1,6 +1,5 @@
 import "./App.css";
 import { useRef, useState, useCallback } from "react";
-import { debounce } from "lodash";
 import ErrorMessage from "./components/ErrorMessage";
 import LoadingMessage from "./components/LoadingMessage";
 import ScrollDownMessage from "./components/ScrollDownMessage";
@@ -8,9 +7,8 @@ import LocationCard from "./components/LocationCard";
 import useFetchLocations from "./hooks/useFetchLocations";
 
 function App() {
-    // const loader = useRef(null);
-    const [limit] = useState(3);
     const [start, setStart] = useState(0);
+    const [limit] = useState(3);
     const { loading, error, locations, hasMore } = useFetchLocations(
         start,
         limit
@@ -57,8 +55,15 @@ function App() {
                     })}
                 </ul>
             </div>
-            {hasMore && (loading ? <LoadingMessage /> : <ScrollDownMessage />)}
-            {error && <ErrorMessage />}
+            <div className="status-messages">
+                {hasMore &&
+                    (loading && !error ? (
+                        <LoadingMessage />
+                    ) : (
+                        <ScrollDownMessage />
+                    ))}
+                {error && <ErrorMessage />}
+            </div>
         </div>
     );
 }

@@ -2,7 +2,10 @@ import React from "react";
 
 export default function LoadingMessage() {
     return (
-        <div className="text-white flex justify-center items-center pb-24">
+        <div
+            data-testid="loading"
+            className="text-white flex justify-center items-center pb-24"
+        >
             <svg
                 className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
                 xmlns="http://www.w3.org/2000/svg"
