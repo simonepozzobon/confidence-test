@@ -80,7 +80,7 @@ test("Render error", () => {
     expect(treeInstance.findByType(ErrorMessage)).toBeTruthy();
 });
 
-test("Rendered all the locations available", () => {
+test("No more locations to load", () => {
     const res = {
         error: false,
         loading: false,
