@@ -28,7 +28,10 @@ function LocationCard(props) {
     let subscriptionBadge;
     if (location.subscriptionActive) {
         subscriptionBadge = (
-            <div className="flex px-4 py-4 shadow-inner rounded-bl-md bg-green-100 items-center justify-center">
+            <div
+                data-testid="subscribed-badge"
+                className="flex px-4 py-4 shadow-inner rounded-bl-md bg-green-100 items-center justify-center"
+            >
                 <BellIcon className="w-5 text-green-600" />
             </div>
         );
