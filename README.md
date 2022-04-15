@@ -3,6 +3,8 @@
 [App Running video](https://youtu.be/mLxX_XEiOKU)\
 [App Unit Test pass video](https://youtu.be/Oo4zkzuHh6I)
 
+![Pass Test Image](test_pass.png)
+
 ## How to install
 
 Clone the repository and run `npm install` or `yarn`
